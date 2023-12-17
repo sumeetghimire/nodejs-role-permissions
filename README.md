@@ -17,7 +17,7 @@ The userRoles collection stores the mapping between users and their assigned rol
 
 
 <h1>Customizing Collection Names</h1>
-<h3>>Edit the Configuration File</h3>
+<h3>Edit the Configuration File</h3>
 
 Open roleConfig.js in your preferred text editor and modify the settings according to your requirements.
 
