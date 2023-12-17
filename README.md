@@ -2,6 +2,19 @@
 
 Beta and Testing Versions
 
+
+<h1>Customizing Collection Names</h1>
+
+<pre class="notranslate">
+  <code>
+    module.exports = {
+   userCollection: 'user',
+  roleCollection: 'roles',
+  userRoleCollection: 'userroles',
+};
+  </code></pre>
+
+
 <h1>How to use as a middleware</h1>
 <pre class="notranslate"><code>
 // app.js or your main server file
