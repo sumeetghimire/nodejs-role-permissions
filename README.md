@@ -6,6 +6,7 @@ Beta and Testing Versions
 
 
 
+
 <h2>Creating New Collections</h2>
 <p>The package creates two collections in your MongoDB database: roles and userRoles. These collections are used to store role information and user-role mappings.</p>
 
