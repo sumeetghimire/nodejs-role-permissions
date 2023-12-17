@@ -55,4 +55,8 @@ app.listen(3000, () => {
 });
 
 
+<h1>Upcoming Features</h1>
+In the next update, I have plan to introduce a permission feature alongside the existing roles functionality. Stay tuned for the upcoming release to enhance the capabilities of your application.
+
+
 </code></pre>
