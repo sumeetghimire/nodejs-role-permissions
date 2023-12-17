@@ -3,16 +3,27 @@
 Beta and Testing Versions
 
 
+
+
+<h2>Creating New Collections</h2>
+The package creates two collections in your MongoDB database: roles and userRoles. These collections are used to store role information and user-role mappings.
+
+<h2>Roles Collection</h2>
+The roles collection stores the available roles in your application. You can add roles manually using a MongoDB client or your application logic.
+
+<h2>User-Roles Mapping Collection</h2>
+The userRoles collection stores the mapping between users and their assigned roles. When a new user is created or when roles are updated for a user, entries are added or modified in this collection.
+
+
+
 <h1>Customizing Collection Names</h1>
 
-<pre class="notranslate">
-  <code>
-    module.exports = {
-   userCollection: 'user',
-  roleCollection: 'roles',
-  userRoleCollection: 'userroles',
-};
-  </code></pre>
+<pre class="notranslate"><code>
+module.exports = {
+userCollection: 'user',
+roleCollection: 'roles',
+userRoleCollection: 'userroles',
+};</code></pre>
 
 
 <h1>How to use as a middleware</h1>
