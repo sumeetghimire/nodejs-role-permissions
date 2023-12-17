@@ -3,7 +3,7 @@
 Beta and Testing Versions
 
 <h1>How to use as a middleware</h1>
-<code>
+<pre class="notranslate"><code>
 // app.js or your main server file
 const express = require('express');
 const app = express();
@@ -27,4 +27,4 @@ app.listen(3000, () => {
 });
 
 
-</code>
+</code></pre>
