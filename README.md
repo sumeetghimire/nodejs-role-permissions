@@ -5,7 +5,7 @@ Beta and Testing Versions
 <h1>How to use as a middleware</h1>
 <pre class="notranslate"><code>
 // app.js or your main server file
-const express = require('express');
+<p style="color🧑‍🦰">const express = require('express');</p>
 const app = express();
 
 // Import the middleware function from your custom package
