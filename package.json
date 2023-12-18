@@ -1,6 +1,6 @@
 {
   "name": "node-role-permissions",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "node-role-permissions is a Node.js package that provides a flexible middleware system for role-based access control in Express applications. It integrates seamlessly with MongoDB to manage roles and user roles. The package allows users to authenticate and control access to routes based on assigned roles.",
   "main": "lib/index.js",
   "directories": {
