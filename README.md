@@ -41,7 +41,7 @@ userRoleCollection: 'userroles',
 const app = express();
 
 // Import the middleware function from your custom package
-const { checkUserRole } = require('node-role-permissions'); // Update this import based on your package
+const { checkUserRole } = require('node-role-permissions'); 
 
 // Example route with middleware
 app.get('/admin/dashboard', checkUserRole('admin'), (req, res) => {
