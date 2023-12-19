@@ -4,7 +4,7 @@ Beta and Testing Versions
 
 <h3>Note: The package is in the testing phase, and we may encounter some issues</h3>
 
-**nodejs-role-permissions**, designed and maintained by <b>Sumeet Ghimire</b>, is a Node.js library created to simplify role-based access control (RBAC) in Express applications. It offers a flexible middleware system for managing user roles, and securing routes based on assigned roles.
+**nodejs-role-permissions**, is a Node.js library created to simplify role-based access control (RBAC) in Express applications. It offers a flexible middleware system for managing user roles, and securing routes based on assigned roles.
 
 
 
