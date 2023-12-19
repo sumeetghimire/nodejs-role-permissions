@@ -33,6 +33,16 @@ roleCollection: 'roles',
 userRoleCollection: 'userroles',
 };</code></pre>
 
+<h1>How to assign a role to user</h1>
+
+<pre class="notranslate"><code>
+const userId = '4d539894a4761d3c05e3'; // Replace with the actual user ID
+const roleName = 'Admin'; //Assuming you have this role
+
+// Call the assignRole function
+const result = assignRole(userId, roleName);
+</code></pre>
+
 
 <h1>How to use as a middleware</h1>
 <pre class="notranslate"><code>
