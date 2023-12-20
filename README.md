@@ -48,7 +48,7 @@ userCollection: 'User',
 <pre class="notranslate"><code>
 const userId = '4d539894a4761d3c05e3'; // Replace with the actual user ID
 const roleName = 'Admin'; //Assuming you have this role
-assignRole(userId, roleName);
+<span style="color:#79c0ff">assignRole(userId, roleName);</span>
 </code></pre>
 
 
@@ -83,7 +83,7 @@ Note: Ensure that the user ID is sent to the middleware through the authenticati
 const userId = 'yourUserIdObjID'; // Replace with the actual user ID
 
 (async () => {
-  const userRole = await getUserRole(userId);
+  <b>const userRole = await getUserRole(userId);</b>
   console.log(userRole);
 })();
 </code>
