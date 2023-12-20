@@ -126,9 +126,9 @@ app.get('/public', (req, res) => {
 });
 </code></pre>
 
-Note: Ensure that your authentication middleware sets `req.user` with the user information.
+Note: Ensure that the user ID is sent to the middleware through the authentication process.
 
 
 
 <h1>Upcoming Features</h1>
-In the next update, I have plan to introduce a permission feature alongside the existing roles functionality. Stay tuned for the upcoming release to enhance the capabilities of your application.
+<p>In the next update, we're excited to introduce a comprehensive permission management feature to complement our existing roles functionality. This enhancement will empower you with more fine-grained control over user access, allowing you to tailor permissions to meet the specific needs of your application. Get ready for a more versatile and powerful user access management system!</p>
