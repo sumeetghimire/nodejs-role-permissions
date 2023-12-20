@@ -48,7 +48,7 @@ userCollection: 'User',
 <pre class="notranslate"><code>
 const userId = '4d539894a4761d3c05e3'; // Replace with the actual user ID
 const roleName = 'Admin'; //Assuming you have this role
-assignRole(userId, roleName);
+<span style="color:#79c0ff">assignRole(userId, roleName);</span>
 </code></pre>
 
 
