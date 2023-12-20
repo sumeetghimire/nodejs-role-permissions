@@ -83,7 +83,7 @@ Note: Ensure that the user ID is sent to the middleware through the authenticati
 const userId = 'yourUserIdObjID'; // Replace with the actual user ID
 
 (async () => {
-  const userRole = await getUserRole(userId);
+  <b>const userRole = await getUserRole(userId);</b>
   console.log(userRole);
 })();
 </code>
