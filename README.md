@@ -46,6 +46,10 @@ userCollection: 'User',
 <h2>How to assign a role to user</h2>
 
 <pre class="notranslate"><code>
+const userId = <b>req.userId</b>; // Make sure to pass your userId in this format from your authMiddleware while using role middleware;
+</code></pre>
+
+<pre class="notranslate"><code>
 const userId = '4d539894a4761d3c05e3'; // Replace with the actual user ID
 const roleName = 'Admin'; //Assuming you have this role
 <span style="color:#79c0ff">assignRole(userId, roleName);</span>
@@ -109,6 +113,13 @@ assignPermissionToUser(userId, 'Edit'); //Assuming  'Edit' Permission already ex
 
 
 <h2>How to use Permission as a middleware</h2>
+
+<h2>Important! </h2>
+
+<pre class="notranslate"><code>
+const userId = <b>req.userId</b>; // Make sure to pass your userId in this format from your authMiddleware while using permission middleware;
+</code></pre>
+
 
 <pre class="notranslate"><code>
 // app.js or your main server file
