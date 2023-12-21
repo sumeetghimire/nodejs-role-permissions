@@ -2,7 +2,6 @@
 
 Beta and Testing Versions
 
-<h3>Note: The package is in the testing phase, and we may encounter some issues</h3>
 
 **nodejs-role-permissions**, is a Node.js library created to simplify role-based access control (RBAC) in Express applications. It offers a flexible middleware system for managing user roles, and securing routes based on assigned roles.
 
@@ -10,7 +9,7 @@ Beta and Testing Versions
 
 
 <h3>Creating New Collections</h3>
-<p>The package creates two collections in your MongoDB database: roles and userRoles. These collections are used to store role information and user-role mappings.</p>
+<p>The package creates five collections in your MongoDB database: roles, userRoles, permissions, role-permission and user-permission  These collections are used to store role information, user-role mappings, and permissions.</p>
 
 <h3>Roles Collection</h3>
 The roles collection stores the available roles in your application. You can add roles manually using a MongoDB client or your application logic.
@@ -38,25 +37,48 @@ Open roleConfig.js in your preferred text editor and modify the settings accordi
 
 <pre class="notranslate"><code>
 module.exports = {
-userCollection: 'User',
+userCollection: 'User',  //Make sure this is user model for authentication 
 };</code></pre>
 
 
 
 <h2>How to assign a role to user</h2>
 
-<pre class="notranslate"><code>
-const userId = <b>req.userId</b>; // Make sure to pass your userId in this format from your authMiddleware while using role middleware;
-</code></pre>
 
 <pre class="notranslate"><code>
 const userId = '4d539894a4761d3c05e3'; // Replace with the actual user ID
 const roleName = 'Admin'; //Assuming you have this role
-<span style="color:#79c0ff">assignRole(userId, roleName);</span>
+<span style="color:#79c0ff"> <b>assignRole(userId, roleName);</b> </span>
+</code></pre>
+
+<h4>If user already has one role it will be removed and add new role</h4>
+
+
+
+<h3>A Basic example how to add role just after creating user
+<pre class="notranslate"><code>
+  <b>const { assignRole} = require("node-role-permissions");</b>
+        const hash = await bcrypt.hash(password, 10)
+          const newUser = new User({
+            name: name,
+            email: email,
+            phone: phone,
+            address:address,
+            password:hash,
+            verify:0
+          });
+      newUser.save();
+     <b> assignRole(newUser.id,'Admin'); </b>    
+
 </code></pre>
 
 
 <h2>How to use Role as a middleware</h2>
+
+<h2>Important! </h2>
+<pre class="notranslate"><code>
+const userId = <b>req.userId</b>; // Make sure to pass your userId in this format from your authMiddleware while using role middleware;
+</code></pre>
 
 <pre class="notranslate"><code>
 // app.js or your main server file
@@ -65,7 +87,7 @@ const app = express();
 
 const { checkUserRole } = require('node-role-permissions');
 
-app.get('/admin/dashboard', authenticateMiddleware checkUserRole('admin'), (req, res) => {
+app.get('/admin/dashboard', authenticateMiddleware <b>checkUserRole('admin')</b>, (req, res) => {
   // This route requires the 'admin' role
   res.send('Welcome to the admin dashboard!');
 });
@@ -87,7 +109,7 @@ Note: Ensure that the user ID is sent to the middleware through the authenticati
 const userId = 'yourUserIdObjID'; // Replace with the actual user ID
 
 (async () => {
-  <b>const userRole = await getUserRole(userId);</b>
+  const userRole = await <b>getUserRole(userId);</b>
   console.log(userRole);
 })();
 </code>
@@ -98,7 +120,8 @@ const userId = 'yourUserIdObjID'; // Replace with the actual user ID
 <h4>Note: All users with this role will have access to the given permission</h4>
 
 <pre class="notranslate"><code>
- assignPermissionToRole('Admin', 'Edit'); //Assuming  'Admin' role and 'Edit' permissions already exist 
+  <b>const {assignPermissionToRole } = require("node-role-permissions");</b>
+ <b>assignPermissionToRole('Admin', 'Edit');</b> //Assuming  'Admin' role and 'Edit' permissions already exist 
 </code></pre>
 
 
@@ -106,8 +129,9 @@ const userId = 'yourUserIdObjID'; // Replace with the actual user ID
 <h2>How to assign/give permission to a user</h2>
 
 <pre class="notranslate"><code>
+  <b>const {assignPermissionToUser } = require("node-role-permissions");</b>
 const userId = '4d539894a4761d3c05e3'; // Replace with the actual user ID
-assignPermissionToUser(userId, 'Edit'); //Assuming  'Edit' Permission already exist
+<b>assignPermissionToUser(userId, 'Edit');</b> //Assuming  'Edit' Permission already exist
 </code></pre>
 
 
@@ -125,9 +149,9 @@ const userId = <b>req.userId</b>; // Make sure to pass your userId in this forma
 // app.js or your main server file
 const express = require('express');
 const app = express();
-const { checkPermission } = require('node-role-permissions');
+<b>const { checkPermission } = require('node-role-permissions');</b>
 
-app.get('/admin/dashboard', authenticateMiddleware, checkPermission('Edit'), (req, res) => {
+app.get('/admin/dashboard', authenticateMiddleware, <b>checkPermission('Edit')</b>, (req, res) => {
   // This route requires the 'edit' Permission
   res.send('You can edit this route content.');
 });
